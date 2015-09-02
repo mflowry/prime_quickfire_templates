@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  title
+  each student in students
+  ul#contents
+
+    form(method="POST")
+    input(type="text" id=student.fname name="First name")
+    input(type="text" id=student.lname name="Last name")
+
+    script(id="entry-template" type="text/x-handlebars-template")
+      .row
+        label {{fname}} {{lname}}
+
