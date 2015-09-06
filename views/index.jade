@@ -2,11 +2,13 @@ extends layout
 
 block content
   h1 Student list
+
+  //Iterate over each student obj in the students array from the students.json file to make a list
   each student in students
     ul#contents
       li= student.fname + " " + student.lname
 
-
+  //create a form to add a new student
   form(method="POST")
     label(name="newStudent") Add a new student:
     input(type="text" id=fname name="First name")
