@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  title
+  h1 Student list
   each student in students
-  ul#contents
+    ul#contents
+      li= student.fname + " " + student.lname
 
-    form(method="POST")
-    input(type="text" id=student.fname name="First name")
-    input(type="text" id=student.lname name="Last name")
 
-    script(id="entry-template" type="text/x-handlebars-template")
-      .row
-        label {{fname}} {{lname}}
+  form(method="POST")
+    label(name="newStudent") Add a new student:
+    input(type="text" id=fname name="First name")
+    input(type="text" id=lname name="Last name")
+    input(type="submit" name="submit" value="submit")
+
+
 
